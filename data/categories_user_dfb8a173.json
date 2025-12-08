@@ -1,0 +1,17 @@
+[
+    {
+        "id": "cat_1",
+        "name": "Makan",
+        "type": "expense"
+    },
+    {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense"
+    },
+    {
+        "id": "cat_3",
+        "name": "Penghasilan",
+        "type": "income"
+    }
+]
