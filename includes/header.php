@@ -14,7 +14,7 @@ if (isset($_GET['error'])) $flash['error'] = htmlspecialchars($_GET['error']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#2E7D32">
-    <title>BudgetKu — Atur Keuanganmu</title>
+    <title>money-Q — Atur Keuanganmu</title>
     <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -24,9 +24,11 @@ if (isset($_GET['error'])) $flash['error'] = htmlspecialchars($_GET['error']);
 
     <?php if (!empty($flash)): ?>
         <div class="flash-messages">
+            <div class="metode">
             <?php foreach ($flash as $type => $msg): ?>
                 <div class="alert <?= $type ?>"><?= htmlspecialchars($msg) ?></div>
             <?php endforeach; ?>
+            </div>
         </div>
     <?php endif; ?>
     <header class="navbar">

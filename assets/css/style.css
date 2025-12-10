@@ -24,7 +24,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -46,6 +46,12 @@ body {
     transform: translateX(-50%);
     z-index: 1000;
     pointer-events: none;
+}
+
+.metode {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .alert {
@@ -126,9 +132,6 @@ body {
     gap: 8px;
 }
 
-.logo::before {
-    content: "";
-}
 
 .navbar nav {
     display: flex;
