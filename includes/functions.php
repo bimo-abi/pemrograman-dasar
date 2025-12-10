@@ -24,7 +24,7 @@ function loadData($type) {
         'categories' => [
             ['id' => 'cat_1', 'name' => 'Makan', 'type' => 'expense'],
             ['id' => 'cat_2', 'name' => 'Transport', 'type' => 'expense'],
-            ['id' => 'cat_3', 'name' => 'Hiburan', 'type' => 'expense'],
+            ['id' => 'cat_3', 'name' => 'liburan', 'type' => 'expense'],
             ['id' => 'cat_4', 'name' => 'Penghasilan', 'type' => 'income']
         ],
         'goals' => [],

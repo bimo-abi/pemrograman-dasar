@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/functions.php';
 
 // Load semua data
@@ -35,7 +36,7 @@ $recent = array_slice($transactions, -5);
 <?php include 'includes/header.php'; ?>
 
 <div class="container">
-    <h1>Selamat Datang di BudgetKu 💰</h1>
+    <h1>Selamat Datang di money-Q</h1>
 
     <!-- Ringkasan Bulanan -->
     <section class="summary-grid">
@@ -62,7 +63,7 @@ $recent = array_slice($transactions, -5);
 
     <!-- Quick Add -->
     <section class="transaction-form">
-        <h2>➕ Tambah Transaksi Cepat</h2>
+        <h2>➕Tambah Transaksi Cepat</h2>
         <form action="add-transaction.php" method="POST">
             <input type="hidden" name="quick" value="1">
             <div class="form-group">
@@ -87,7 +88,7 @@ $recent = array_slice($transactions, -5);
     <!-- Goals -->
     <?php if (!empty($goals)): ?>
         <section>
-            <h2>🎯 Target Tabungan</h2>
+            <h2>Target Tabungan</h2>
             <?php foreach ($goals as $g):
                 $progress = $g['target_amount'] > 0 ? min(100, ($g['current_amount'] / $g['target_amount']) * 100) : 0;
                 $remaining = $g['target_amount'] - $g['current_amount'];
@@ -118,7 +119,7 @@ $recent = array_slice($transactions, -5);
     <!-- Transaksi Terbaru -->
     <?php if (!empty($recent)): ?>
         <section>
-            <h2>📋 5 Transaksi Terbaru</h2>
+            <h2>5 Transaksi Terbaru</h2>
             <ul class="transaction-list">
                 <?php foreach (array_reverse($recent) as $t): ?>
                     <li class="transaction-item">

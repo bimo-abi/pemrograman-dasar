@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/functions.php';
 
 $errors = [];
@@ -26,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'account' => trim($_POST['account'] ?? '')
     ];
 
-    // ✅ VALIDASI SERVER-SIDE pakai filter_var()
+    // VALIDASI SERVER-SIDE pakai filter_var()
     $amount = filter_var($input['amount'], FILTER_VALIDATE_FLOAT);
     $date = filter_var($input['date'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $desc = filter_var($input['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -60,12 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'account' => $input['account']
         ];
 
-        // ✅ FILE HANDLING: muat → tambah → simpan
+        // FILE HANDLING: muat → tambah → simpan
         $transactions = loadData('transactions');
         $transactions[] = $newTrans;
         saveData('transactions', $transactions);
 
-        // ✅ LOGIKA BISNIS: update saldo akun terkait
+        // LOGIKA BISNIS: update saldo akun terkait
         $updatedAccounts = [];
         foreach ($accounts as $acc) {
             if ($acc['name'] === $input['account']) {
@@ -75,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         saveData('accounts', $updatedAccounts);
 
-        // ✅ LOGIKA BISNIS: auto-kategorisasi berbasis keyword (nilai tambah!)
+        // LOGIKA BISNIS: auto-kategorisasi berbasis keyword (nilai tambah!)
         $keywords = [
             'Transport' => ['gojek', 'grab', 'ojek', 'taksi', 'bengkel', 'bensin', 'pom', 'shell', 'pertamina'],
             'Makan' => ['warung', 'resto', 'kopi', 'starbuck', 'mcd', 'burger', 'nasi', 'mie', 'soto', 'bakso'],
@@ -95,7 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Redirect agar tidak double-submit
-        header("Location: index.php?added=1");
+        $_SESSION['flash'] = ['success' => 'Transaksi berhasil ditambahkan!'];
+        header("Location: index.php");
         exit;
     } else {
         $formData = $input;

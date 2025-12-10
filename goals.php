@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/functions.php';
 
 $goals = loadData('goals');
@@ -42,8 +43,7 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     exit;
 }
 
-// Hitung progres otomatis dari transaksi (opsional: transaksi dengan kategori "Tabungan")
-// Atau bisa juga via deskripsi mengandung "tabung", "simpan", dll
+// Hitung progres otomatis dari transaksi
 foreach ($goals as &$g) {
     $saved = 0;
     foreach ($transactions as $t) {
@@ -66,16 +66,17 @@ saveData('goals', $goals); // simpan perubahan progres
 
 <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-        <h1>🎯 Target Tabungan</h1>
+        <h1>Target Tabungan</h1>
         <button class="btn btn-primary" onclick="document.getElementById('addGoalForm').style.display='block'">
-            ➕ Buat Goal Baru
+            ➕Buat Goal Baru
         </button>
     </div>
 
     <?php if (empty($goals)): ?>
         <div class="card" style="text-align: center; padding: 40px;">
             <h3>Belum ada target tabungan.</h3>
-            <p>Mulailah dengan membuat goal pertamamu — misalnya: "DP Motor", "Liburan", atau "Dana Darurat".</p>
+            <p>Mulailah dengan membuat goal pertamamu</p>
+            <br>
             <button class="btn btn-primary" onclick="document.getElementById('addGoalForm').style.display='block'">
                 Buat Goal Sekarang
             </button>
@@ -120,7 +121,7 @@ saveData('goals', $goals); // simpan perubahan progres
 
     <!-- Form Tambah Goal (hidden by default) -->
     <div id="addGoalForm" class="transaction-form" style="display: none; margin-top: 32px;">
-        <h2>➕ Buat Goal Baru</h2>
+        <h2>➕Buat Goal Baru</h2>
         <form method="POST">
             <input type="hidden" name="add_goal" value="1">
             <div class="form-group">

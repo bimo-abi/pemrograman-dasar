@@ -1,37 +1,19 @@
 [
     {
-        "id": "t_48d5c68a051c",
-        "date": "2025-02-12",
+        "id": "t_e8fb39779e45",
+        "date": "2025-12-10",
         "type": "expense",
-        "amount": 12,
+        "amount": 2000,
         "description": "beli kopi",
         "category": "Makan",
         "account": "Kas"
     },
     {
-        "id": "t_5213005ce208",
-        "date": "2024-09-09",
-        "type": "income",
-        "amount": 1000000,
-        "description": "gaji",
-        "category": "Penghasilan",
-        "account": "Kas"
-    },
-    {
-        "id": "t_bba6ca5bd862",
-        "date": "2025-12-08",
-        "type": "income",
-        "amount": 20000,
-        "description": "parkiran",
-        "category": "Penghasilan",
-        "account": "Kas"
-    },
-    {
-        "id": "t_3857ba705ed2",
-        "date": "2025-12-08",
+        "id": "t_c55cc0c33490",
+        "date": "2025-12-10",
         "type": "expense",
-        "amount": 10000,
-        "description": "makan",
+        "amount": 2000,
+        "description": "beli kopi",
         "category": "Makan",
         "account": "Kas"
     }

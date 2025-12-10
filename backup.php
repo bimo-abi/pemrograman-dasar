@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/functions.php';
 
 $message = '';
@@ -72,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['import_file'])) {
             if (json_last_error() !== JSON_ERROR_NONE) {
                 $error = "File JSON tidak valid.";
             } else {
-                // ✅ FILE HANDLING: simpan ke file masing-masing
+                // FILE HANDLING: simpan ke file masing-masing
                 $types = ['transactions', 'categories', 'accounts', 'goals'];
                 $successCount = 0;
                 foreach ($types as $t) {
@@ -125,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['import_file'])) {
 <?php include 'includes/header.php'; ?>
 
 <div class="container">
-    <h1>⚙️ Backup & Restore</h1>
+    <h1>Backup & Restore</h1>
 
     <?php if ($message): ?>
         <div class="alert success"><?= htmlspecialchars($message) ?></div>
@@ -135,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['import_file'])) {
     <?php endif; ?>
 
     <section class="transaction-form">
-        <h2>📤 Ekspor Data</h2>
+        <h2>Ekspor Data</h2>
         <p>Simpan data ke file lokal sebagai cadangan.</p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
             <a href="?export=json" class="btn btn-primary">Ekspor JSON (Semua Data)</a>
@@ -148,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['import_file'])) {
     </section>
 
     <section class="transaction-form" style="margin-top: 32px;">
-        <h2>📥 Impor Data</h2>
+        <h2>Impor Data</h2>
         <p>Pulihkan data dari file backup (.json atau .csv).</p>
         <form method="POST" enctype="multipart/form-data" style="margin-top: 16px;">
             <div class="form-group">

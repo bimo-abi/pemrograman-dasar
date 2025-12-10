@@ -1,6 +1,6 @@
 <?php
-// Ambil pesan flash (opsional)
-$flash = [];
+$flash = $_SESSION['flash'] ?? [];
+unset($_SESSION['flash']);
 if (isset($_GET['success'])) $flash['success'] = "Berhasil!";
 if (isset($_GET['added'])) $flash['success'] = "Transaksi berhasil ditambahkan!!";
 if (isset($_GET['deleted'])) $flash['success'] = "Transaksi berhasil dihapus!";
@@ -12,7 +12,8 @@ if (isset($_GET['error'])) $flash['error'] = htmlspecialchars($_GET['error']);
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#2E7D32">
     <title>BudgetKu — Atur Keuanganmu</title>
     <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
     <!-- Chart.js -->
@@ -24,20 +25,19 @@ if (isset($_GET['error'])) $flash['error'] = htmlspecialchars($_GET['error']);
     <?php if (!empty($flash)): ?>
         <div class="flash-messages">
             <?php foreach ($flash as $type => $msg): ?>
-                <div class="alert <?= $type ?>"><?= $msg ?></div>
+                <div class="alert <?= $type ?>"><?= htmlspecialchars($msg) ?></div>
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
-
     <header class="navbar">
         <div class="container">
-            <a href="index.php" class="logo">💰 BudgetKu</a>
+            <a href="index.php" class="logo">money-Q</a>
             <nav>
                 <a href="index.php">Dashboard</a>
-                <a href="add-transaction.php">➕ Tambah</a>
-                <a href="transactions.php">📋 Riwayat</a>
-                <a href="reports.php">📊 Laporan</a>
-                <a href="goals.php">🎯 Goals</a>
+                <a href="add-transaction.php">+ Tambah</a>
+                <a href="transactions.php">Riwayat</a>
+                <a href="reports.php">Laporan</a>
+                <a href="goals.php">Goals</a>
             </nav>
         </div>
     </header>

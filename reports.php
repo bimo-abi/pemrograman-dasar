@@ -138,7 +138,7 @@ foreach ($last6Months as $key) {
 
     <!-- Detail Transaksi Bulan Ini -->
     <section>
-        <h2>📋 Detail Transaksi Bulan Ini</h2>
+        <h2>Detail Transaksi Bulan Ini</h2>
         <ul class="transaction-list">
             <?php
             $thisMonthTrans = array_filter($transactions, fn($t) => substr($t['date'], 0, 7) === "$year-$month");
@@ -166,7 +166,7 @@ foreach ($last6Months as $key) {
 <!-- Chart.js Scripts -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // ✅ Pie Chart: Kategori
+        // Pie Chart: Kategori
         <?php if (!empty($catLabels)): ?>
             const ctx1 = document.getElementById('categoryChart').getContext('2d');
             new Chart(ctx1, {
@@ -193,7 +193,6 @@ foreach ($last6Months as $key) {
                 }
             });
         <?php endif; ?>
-
         // ✅ Bar Chart: 6 Bulan Terakhir
         <?php if (!empty($barLabels)): ?>
             const ctx2 = document.getElementById('monthlyChart').getContext('2d');

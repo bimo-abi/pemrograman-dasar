@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'includes/functions.php';
 
 $transactions = loadData('transactions');
@@ -41,7 +42,7 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     }
 
     if ($found) {
-        // ✅ LOGIKA BISNIS: kembalikan saldo akun
+        //LOGIKA BISNIS: kembalikan saldo akun
         $updatedAccounts = [];
         foreach ($accounts as $acc) {
             if ($acc['name'] === $deleted['account']) {
@@ -55,7 +56,8 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
         header("Location: transactions.php?deleted=1");
         exit;
     } else {
-        header("Location: transactions.php?error=Transaksi%20tidak%20ditemukan");
+        $_SESSION['flash'] = ['success' => 'Transaksi berhasil dihapus!'];
+        header("Location: transactions.php");
         exit;
     }
 }
@@ -65,13 +67,13 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
 
 <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-        <h1>📋 Daftar Transaksi</h1>
-        <a href="add-transaction.php" class="btn btn-primary">➕ Tambah Baru</a>
+        <h1>Daftar Transaksi</h1>
+        <a href="add-transaction.php" class="btn btn-primary">➕Tambah Baru</a>
     </div>
 
     <!-- Filter -->
     <div class="transaction-form">
-        <h3>🔍 Filter</h3>
+        <h3>Filter</h3>
         <form method="GET" class="form-section" style="padding: 0;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 16px;">
                 <div class="form-group">
