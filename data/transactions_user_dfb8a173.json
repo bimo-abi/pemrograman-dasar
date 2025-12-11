@@ -1,29 +1,29 @@
 [
     {
-        "id": "t_5a8a9413a14a",
-        "date": "2026-01-01",
+        "id": "t_411c6eb5a491",
+        "date": "2025-12-01",
         "type": "income",
-        "amount": 200000000,
-        "description": "gaji",
+        "amount": 10000000,
+        "description": "GAJI",
         "category": "Penghasilan",
         "account": "Kas"
     },
     {
-        "id": "t_7040c5e7817d",
-        "date": "2027-12-10",
+        "id": "t_4fe19b3cc2cb",
+        "date": "2025-12-11",
         "type": "expense",
-        "amount": 300000000,
-        "description": "GAJI",
-        "category": "Penghasilan",
+        "amount": 10000,
+        "description": "makan",
+        "category": "Makan",
         "account": "Kas"
     },
     {
-        "id": "t_de66da5e5ef1",
-        "date": "2027-12-10",
-        "type": "income",
-        "amount": 500000000,
-        "description": "GAJI",
-        "category": "Penghasilan",
+        "id": "t_e2abe2f76881",
+        "date": "2025-12-10",
+        "type": "expense",
+        "amount": 30000,
+        "description": "bensin",
+        "category": "Transport",
         "account": "Kas"
     }
 ]
