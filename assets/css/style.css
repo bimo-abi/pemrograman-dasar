@@ -254,7 +254,7 @@ h3 {
 }
 
 .form-group {
-    margin-bottom: 24px;
+    margin: 24px;
 }
 
 .form-group label {
@@ -300,6 +300,7 @@ h3 {
 .btn-primary {
     background-color: var(--success);
     color: white;
+    text-decoration: none   ;
 }
 
 .btn-primary:hover {
@@ -311,6 +312,7 @@ h3 {
 .btn-secondary {
     background-color: var(--gray-light);
     color: var(--text-secondary);
+    text-decoration: none;
 }
 
 .btn-secondary:hover {
@@ -321,6 +323,7 @@ h3 {
     background-color: var(--error);
     color: white;
     margin-left: 15px;
+    text-decoration: none;
 }
 
 .btn-danger:hover {

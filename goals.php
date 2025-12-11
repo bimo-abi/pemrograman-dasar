@@ -68,7 +68,7 @@ saveData('goals', $goals); // simpan perubahan progres
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
         <h1>Target Tabungan</h1>
         <button class="btn btn-primary" onclick="document.getElementById('addGoalForm').style.display='block'">
-            ➕Buat Goal Baru
+        Buat Goal Baru
         </button>
     </div>
 

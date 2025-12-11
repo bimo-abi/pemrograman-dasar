@@ -1,6 +1,4 @@
 <?php
-// includes/functions.php
-
 function getUserId() {
     if (isset($_COOKIE['user_id']) && preg_match('/^user_[a-z0-9]{8}$/', $_COOKIE['user_id'])) {
         return $_COOKIE['user_id'];

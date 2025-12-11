@@ -25,14 +25,5 @@
         "description": "GAJI",
         "category": "Penghasilan",
         "account": "Kas"
-    },
-    {
-        "id": "t_e01373324568",
-        "date": "2025-12-10",
-        "type": "expense",
-        "amount": 50000000,
-        "description": "tabungan",
-        "category": "Penghasilan",
-        "account": "Kas"
     }
 ]

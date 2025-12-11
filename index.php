@@ -63,7 +63,7 @@ $recent = array_slice($transactions, -5);
 
     <!-- Quick Add -->
     <section class="transaction-form">
-        <h2>➕Tambah Transaksi Cepat</h2>
+        <h2>Tambah Transaksi Cepat</h2>
         <form action="add-transaction.php" method="POST">
             <input type="hidden" name="quick" value="1">
             <div class="form-group">

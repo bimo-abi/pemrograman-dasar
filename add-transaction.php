@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container">
     <a href="index.php" class="btn btn-secondary" style="display: inline-block; margin-bottom: 16px;">&larr; Kembali</a>
 
-    <h1>➕ Tambah Transaksi</h1>
+    <h1>Tambah Transaksi</h1>
 
     <form method="POST" class="transaction-form">
         <div class="form-group">
@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </option>
                 <?php endforeach; ?>
             </select>
-            <p class="caption" style="margin-top: 4px;">💡 Deskripsi seperti "Gojek ke kantor" akan otomatis dikategorikan sebagai <strong>Transport</strong>.</p>
+            <p class="caption" style="margin-top: 4px;">Deskripsi seperti "Gojek ke kantor" akan otomatis dikategorikan sebagai <strong>Transport</strong>.</p>
         </div>
 
         <div class="form-group">

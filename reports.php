@@ -193,7 +193,7 @@ foreach ($last6Months as $key) {
                 }
             });
         <?php endif; ?>
-        // ✅ Bar Chart: 6 Bulan Terakhir
+        // Bar Chart: 6 Bulan Terakhir
         <?php if (!empty($barLabels)): ?>
             const ctx2 = document.getElementById('monthlyChart').getContext('2d');
             new Chart(ctx2, {
