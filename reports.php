@@ -118,7 +118,7 @@ foreach ($last6Months as $key) {
 
     <!-- Grafik 1: Pengeluaran per Kategori (Pie) -->
     <section>
-        <h2>🎯 Distribusi Pengeluaran (<?= DateTime::createFromFormat('!m', $month)->format('F') ?> <?= $year ?>)</h2>
+        <h2>Distribusi Pengeluaran (<?= DateTime::createFromFormat('!m', $month)->format('F') ?> <?= $year ?>)</h2>
         <?php if (!empty($catTotals)): ?>
             <div style="height: 300px; background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
                 <canvas id="categoryChart"></canvas>
@@ -130,7 +130,7 @@ foreach ($last6Months as $key) {
 
     <!-- Grafik 2: Perbandingan Bulanan (Bar) -->
     <section>
-        <h2>📈 Aktivitas 6 Bulan Terakhir</h2>
+        <h2>Aktivitas 6 Bulan Terakhir</h2>
         <div style="height: 350px; background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
             <canvas id="monthlyChart"></canvas>
         </div>

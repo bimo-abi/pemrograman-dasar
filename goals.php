@@ -121,7 +121,7 @@ saveData('goals', $goals); // simpan perubahan progres
 
     <!-- Form Tambah Goal (hidden by default) -->
     <div id="addGoalForm" class="transaction-form" style="display: none; margin-top: 32px;">
-        <h2>➕Buat Goal Baru</h2>
+        <h2>Buat Goal Baru</h2>
         <form method="POST">
             <input type="hidden" name="add_goal" value="1">
             <div class="form-group">

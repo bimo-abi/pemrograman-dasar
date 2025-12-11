@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="form-group">
             <label>Deskripsi</label>
-            <input type="text" name="description" value="<?= htmlspecialchars($formData['description']) ?>" placeholder="Contoh: Beli kopi di Starbuck" required>
+            <input type="text" name="description" value="<?= htmlspecialchars($formData['description']) ?>" required>
         </div>
 
         <div class="form-group">

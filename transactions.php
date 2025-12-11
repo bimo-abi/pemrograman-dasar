@@ -75,7 +75,6 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     <div class="transaction-form">
         <h3>Filter</h3>
         <button type="submit" class="btn btn-secondary">Terapkan Filter</button>
-
         <form method="GET" class="form-section" style="padding: 0;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 16px;">
                 <div class="form-group">
